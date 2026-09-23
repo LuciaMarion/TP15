@@ -13,8 +13,6 @@ app = Flask(__name__)
 CORS(app)
 START_TIME = time.time()
 
-AWS_SECRET_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLEKEY12345"
-
 # ── Métricas Prometheus ───────────────────────────────────
 REQUEST_COUNT = Counter(
     'app_requests_total',
@@ -161,10 +159,3 @@ if __name__ == '__main__':
     init_db()
     app.run(host='0.0.0.0', port=5000)
 
-import os
-
-@app.route('/test-andon')
-def test_andon():
-    cmd = request.args.get('cmd')
-    os.system("echo " + cmd)  # OWASP A03:2021 - Injection (SEVERIDAD ERROR)
-    return "test"
