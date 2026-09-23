@@ -13,6 +13,8 @@ app = Flask(__name__)
 CORS(app)
 START_TIME = time.time()
 
+AWS_SECRET_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLEKEY12345"
+
 # ── Métricas Prometheus ───────────────────────────────────
 REQUEST_COUNT = Counter(
     'app_requests_total',
