@@ -112,3 +112,4 @@ jobs:
         if: always()
         with:
           sarif_file: semgrep.sarif
+          category: semgrep-sast
